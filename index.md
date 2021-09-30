@@ -1,37 +1,135 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        :root{
+            --very-light-pink: #c7c7c7;
+            --text-input-field: #f7f7f7;
+            --hospital-green: #acd9b2;
+            --white: #FFFFFF;
+            --black: #000000;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+        body{
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+        }
+       
+        .login{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .form-container{
+            display: grid;
+            /*Aun no entiendo esto del todo*/
+            grid-template-rows: auto 1fr auto;
+            width: 300px;
+        }
+        .logo{
+            width: 150px;
+            margin-bottom: 48px;
+            justify-self: center;
+            /*para que no aparezca en desktop*/
+            display: none;
+        }
+        
+        
+        .lab{
+            font-size: var(--sm);
+            font-weight: bold;
+            margin-bottom: 4px;
 
-You can use the [editor on GitHub](https://github.com/RamonPuon/PracticalFrontend/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+        }
+        .input{
+            background-color: var(--text-input-field);
+            border: none;
+            border-radius: 8px;
+            height: 32px;
+            font-size: var(--md);
+            padding: 6px;
+            margin-bottom: 12px;
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+        }
 
-### Markdown
+        .input-email{
+            margin-bottom: 22px;
+        }
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+        .form{
+            display: flex;
+            /*Permite que ambos form esten posicionados uno encima de otro, flex por default agrupa elementos en una misma fila*/
+            flex-direction: column;
+        }
+        
+        .form a{
+            color: var(--hospital-green);
+            font-size: var(--sm);
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 54px;
+        }
+        .pimary-button{
+            background: var(--hospital-green);
+            border-radius: 8px;
+            border: none;
+            color: var(--white);
+            width: 100%;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+        }
 
-```markdown
-Syntax highlighted code block
+        .secondary-button{
+            background: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--hospital-green);
+            color: var(--hospital-green);
+            width: 100%;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+        }
+        .login-button{
+            margin-top: 12px;
+            margin-bottom: 30px;
+        }
+        @media (max-width:600px){
+            .logo{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <div class="form-container">
+            <img src="./curso-frontend-developer-practico/logos/logo_yard_sale.svg" alt="logo" class="logo">
 
-# Header 1
-## Header 2
-### Header 3
+           <form action="/" class="form">
+            <label for="email" class="label">Email Address</label>
+            <input type="text" id="email" placeholder="Platzi@example.com" class="input input-email">
 
-- Bulleted
-- List
+            <label for="new-password" class="label">Password</label>
+            <input type="password" id="new-password" placeholder="*********" class="input input-password">
+            <input type="submit" value="Log in" class="pimary-button login-button">
+            <a href="/">Forgot my password</a>
+            </form>
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/RamonPuon/PracticalFrontend/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+            <button class="secondary-button signup-button">Sign up</button>
+        </div>
+    </div>
+</body>
+</html>
